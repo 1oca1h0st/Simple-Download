@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #---------------------------------import---------------------------------------
 import urllib;
 import urllib2;
@@ -54,8 +53,10 @@ def down(url_download):
 
     filename = re.findall(r"\d{3}\.mp3", mp3_url)[0]
     print filename;
-    
-    os.chdir(r'Z:/down');
+
+    #处理中文目录
+    filepath=unicode("Z:/中文",'utf8');
+    os.chdir(filepath);
     url = mp3_url + random_7 + random_1 + random_5 + random_2 + random_5 + random_3 + random_6 + random_4 + random_8;
     print url;
     urllib.urlretrieve(url,filename);
